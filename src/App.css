@@ -5,7 +5,29 @@
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img{
+  object-fit: cover;
+  max-width: 100%;
+}
+
+body{
   background: #f8f4eb;
+}
+
+
+
+.container{
+  background: url("https://res.cloudinary.com/dkngsthge/image/upload/v1705672912/EvolveText_fflrsj.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  padding: 0 12%;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
+  align-items: center;
+  z-index: 10;
 }
 
 .navbar{
@@ -17,10 +39,13 @@
   padding: 10px 12%;
 }
 
+.navbar .flex img{
+  width: 100%;
+}
+
 
 .menu{
   display: flex;
-  align-items: center; 
   flex: 1;
   margin-left: 50px;
 }
@@ -29,4 +54,52 @@
   color: #000;
   text-transform: capitalize;
 
+}
+
+.navbar .btn{
+  display: flex;
+  align-items: center;
+}
+
+.navbar .btn a{
+  margin-right: 20px;
+  color: #000;
+}
+
+.navbar .btn .btn-search{
+  outline: none;
+  border: none;
+  background: #ffc235;
+  color: #000;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  padding: 6px 20px;
+  transition: 0.2s ease;
+}
+
+.navbar .btn .btn-search:hover,
+.navbar .btn .btn-search:active{
+  background: #ff6b66;
+  color: #fff;
+}
+
+
+.container .company .evolve{
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.container .company .evolve h1{
+  font-size: 60px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 700;
+}
+
+.container .company .evolve h3{
+  font-size: 27px;
+  text-transform: lowercase;
+  color: #000;
+  font-weight: 700;
 }

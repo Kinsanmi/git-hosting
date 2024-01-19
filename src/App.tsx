@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import Navbar from './Navbar'
 
@@ -13,7 +13,10 @@ export type People = {
 
 function App(): JSX.Element {
 
-  const [state, setstate] = useState<People["person"]>([
+  const [loading, setLoading] = useState<boolean>(false)
+  const [error, setError] = useState<string| null>(null)
+
+  const [state, ] = useState<People["person"]>([
     {
       name: "James",
       age: 34,
@@ -28,10 +31,52 @@ function App(): JSX.Element {
     },
   ])
 
+  const fetchData = () =>{
+    return new Promise((resolve, reject) => { 
+      setTimeout(() => {
+        resolve({events: state})
+
+        reject({message: "Request Failed"})
+      }, 4000);
+     })
+  }
+
+  const dataFile = async() =>{
+    setLoading(true);
+    try {
+      const res = await fetchData()
+      console.log(res)
+    } catch (error) {
+      setError((error as Error). message)
+    }finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(()=>{
+    dataFile()
+  },[])
+
+  const renderLoad = () =>{
+    if(loading){
+      return <div>Loading...</div>
+    }
+
+    if(error){
+      return <div>404 Error</div>
+    }
+
+    return (
+      <>
+      <Navbar person={state} />
+      </>
+    )
+  }
+
 
   return (
     <>
-      <Navbar person={state} />
+      {renderLoad()}
     </>
   )
 }
