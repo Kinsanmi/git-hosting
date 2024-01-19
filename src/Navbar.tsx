@@ -24,7 +24,7 @@ const Navbar:React.FC<IPeople> = ({person}) => {
 
                         <div className="menu">
                             <div className="menulist">
-                                <ul style={{display: "flex", gap: "1rem"}}>
+                                <ul className="menu-bar">
                                     <li><a href="">Home</a></li>
                                     <li><a href="">Benefits</a></li>
                                     <li><a href="">our classes</a></li>

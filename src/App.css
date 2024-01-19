@@ -16,7 +16,9 @@ body{
   background: #f8f4eb;
 }
 
-
+.header{
+  height: 100vh;
+}
 
 .container{
   background: url("https://res.cloudinary.com/dkngsthge/image/upload/v1705672912/EvolveText_fflrsj.png");
@@ -39,7 +41,7 @@ body{
   padding: 10px 12%;
 }
 
-.navbar .flex img{
+.contain .navbar .flex img{
   width: 100%;
 }
 
@@ -50,10 +52,15 @@ body{
   margin-left: 50px;
 }
 
+.menu .menulist .menu-bar{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .menu .menulist ul li a{
   color: #5e0000;
   text-transform: capitalize;
-
 }
 
 .navbar .btn{
@@ -147,4 +154,89 @@ body{
   align-items: center;
   gap: 1rem;
   padding: 0px 12%;
+}
+
+
+
+.load{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  text-transform: capitalize;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+
+
+
+@media screen and (max-width: 480px) {
+  .menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: auto;
+    background-color: #ffa6a3;
+    transform: translateX(100%);
+  }
+
+  .menu .menulist .menu-bar{
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 5%;
+    grid-template-columns: repeat(1,1fr);
+    gap: 0.5rem;
+    z-index: 10;
+  }
+
+  .classes {
+    display: flex;
+    flex-direction: column-reverse;
+   /* grid-template-columns: repeat(auto-fit, minmax(360px, auto)); */
+    gap: 0.5rem;
+    padding: 0px 2%;
+    margin-top: 50px;
+  }
+
+.container .company .evolve h1 {
+  font-size: 45px;
+  }
+
+.container .company .evolve h3 {
+  font-size: 26px;
+  }
+
+.container .company .evolve p {
+  line-height: 1.2;
+  }
+
+.container .company .reg {
+  margin-top: 10px;
+  gap: 1rem;
+  }
+
+  .navbar .btn .btn-search {
+  font-size: 14px;
+  padding: 6px 12px;
+  }
+
+  .navbar .btn a {
+    margin-right: 5px;
+    color: #000;
+  }
+
+  .navbar {
+    padding: 10px 5%;
+  }
+  
 }
