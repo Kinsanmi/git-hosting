@@ -49,7 +49,7 @@ const Navbar:React.FC<IPeople> = ({person}) => {
                             <p>Unrivaled Gym. unparalleled training fitness classes. world <br />class stduio to get the body shapes that you dream of. get your dream body now</p>
                         </div>
                         <div className="reg">
-                            <a href="">Join now</a>
+                            <a className="join" href="">Join now</a>
                             <a href="">Learn more</a>
                         </div>
                     </div>
@@ -59,7 +59,28 @@ const Navbar:React.FC<IPeople> = ({person}) => {
                     </div>
                 </div>
 
-                {person.map((item)=>{
+            </header>
+
+
+            <section>
+                <div className="classes">
+                    <div className="duration">
+                        <img src="https://res.cloudinary.com/dkngsthge/image/upload/v1705672912/BenefitsPageGraphic_wrfyis.png" alt="" />
+                    </div>
+
+                    <div className="member">
+                        <h1>Millions of happy members getting <span>fit</span></h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, perspiciatis a! Expedita tempora sed alias aliquid iusto temporibus cumque recusandae omnis sit magnam? Ad voluptatem quasi quam debitis velit soluta?</p>
+                        <p>Fringilla a sed at suspendisse ut enim volupat.</p>
+                        <div className="join">
+                            <a href="">Join now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            {person.map((item)=>{
                     return (
                         <>
                         <div>{item.name}</div>
@@ -69,7 +90,6 @@ const Navbar:React.FC<IPeople> = ({person}) => {
                     )
                 })}
                 <button onClick={handleClick}>Click value{click}</button>
-            </header>
             </>
         )
     }

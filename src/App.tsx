@@ -18,12 +18,6 @@ function App(): JSX.Element {
 
   const [state, ] = useState<People["person"]>([
     {
-      name: "James",
-      age: 34,
-      note: "Allogenic to staying on the bench",
-      url: "https://images.pexels.com/photos/2834917/pexels-photo-2834917.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
       name: "Steven curry",
       age: 35,
       note: "Three point shooter on points",
@@ -34,7 +28,7 @@ function App(): JSX.Element {
   const fetchData = () =>{
     return new Promise((resolve, reject) => { 
       setTimeout(() => {
-        resolve({events: state})
+       resolve({events: state})
 
         reject({message: "Request Failed"})
       }, 4000);
